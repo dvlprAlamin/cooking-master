@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#e5e5e5;
+    font-family: 'Poppins', sans-serif;
+}
+#inputSection{
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+#inputMealName, #searchBtn{
+    padding: 1rem 1.5rem;
+    border: 0;
+    outline: 0;
+}
+#inputMealName{
+    background-color: #E8F0FE;
+    border-radius: 5px 0 0 5px;
+    max-width: 15rem;
+}
+#searchBtn{
+    background-color: tomato;
+    border-radius: 0 5px 5px 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+#mealContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+.mealItem{
+    background-color:#cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.mealItem img{
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.mealItem h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    color: #333333;
+}
+#mealDetails{
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 650px;
+    height: 80vh;
+    background-color: #ffffff;
+    display: none;
+}
+#mealDetails img{
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+}
+#mealDetails{
+    padding: 2rem;
+    overflow-y: auto;
+}
+#mealDetails h1,h3{
+    margin: 1rem 0;
+    color: #333232;
+}
+#ingredientsContainer li{
+    list-style: none;
+    margin-top: .5rem;
+    color: #555555;
+}
+#ingredientsContainer li::before{
+    content: '✅';
+    margin-right: 1rem;
+}
+#close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #008891;
+    padding:4px 16px;
+    transition: .3s;
+    cursor: pointer;
+}
+#close-btn:hover{
+    background-color: #ff0000;
+}
+#notFound{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
