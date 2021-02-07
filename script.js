@@ -1,22 +1,19 @@
 // search button event handler
 function searchMeal() {
     const mealName = document.getElementById('inputMealName');
-    if (mealName.value.length !== 1) {
-        document.getElementById('mealContainer').innerHTML = '';
-        document.getElementById('notFound').style.display = 'flex';
-        return;
-    }
-    else{
-        document.getElementById('notFound').style.display = 'none';
-    }
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=' + mealName.value)
         .then(res => res.json())
         .then(data => foodItem(data.meals))
+        .catch(() => {
+            document.getElementById('mealContainer').innerHTML = '';
+            document.getElementById('notFound').style.display = 'flex';
+        })
 };
 
 
 // showing search result function
 function foodItem(meals) {
+    document.getElementById('notFound').style.display = 'none';
     const mealContainer = document.getElementById('mealContainer');
     if (mealContainer.innerHTML !== null) {
         mealContainer.innerHTML = '';
