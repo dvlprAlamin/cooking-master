@@ -1,5 +1,5 @@
 // search button event handler
-function searchMeal() {
+const searchMeal = () => {
     const mealName = document.getElementById('inputMealName');
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=' + mealName.value)
         .then(res => res.json())
@@ -12,7 +12,7 @@ function searchMeal() {
 
 
 // showing search result function
-function foodItem(meals) {
+const foodItem = meals => {
     document.getElementById('notFound').style.display = 'none';
     const mealContainer = document.getElementById('mealContainer');
     if (mealContainer.innerHTML !== null) {
@@ -30,7 +30,7 @@ function foodItem(meals) {
 
 
 // fetch single meal info with ingredients 
-function mealInfo(mealName) {
+const mealInfo = mealName => {
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + mealName)
         .then(res => res.json())
         .then(data => mealDetails(data.meals[0]))
@@ -38,7 +38,7 @@ function mealInfo(mealName) {
 
 
 // showing meal details function
-function mealDetails(meal) {
+const mealDetails = meal => {
     const mealDetails = document.getElementById('mealDetails');
     mealDetails.innerHTML = `
     <button title="Close" id="close-btn" onclick="closeDetails()">✖</button>
@@ -64,6 +64,6 @@ function mealDetails(meal) {
 
 
 // close button event handler function
-function closeDetails() {
+const closeDetails = () => {
     document.getElementById('mealDetails').style.display = 'none';
 };
