@@ -6,6 +6,9 @@ function searchMeal() {
         document.getElementById('notFound').style.display = 'flex';
         return;
     }
+    else{
+        document.getElementById('notFound').style.display = 'none';
+    }
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=' + mealName.value)
         .then(res => res.json())
         .then(data => foodItem(data.meals))
